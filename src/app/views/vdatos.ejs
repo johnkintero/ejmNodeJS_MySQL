@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <title>Pits</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Pits</a>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mt-4 text-center">
+        <table class="table table-striped table-sm">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>documento</th>
+            <th>nombre</th>
+            <th>apellido</th>
+            <th>activo</th>
+            <th>fechaCreacion</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% for(var i = 0; i< vdatos.length; i++) { %>
+            <tr>
+              <td>
+                <%= vdatos[i].IDPERSONA %>
+              </td>
+              <td>
+                <%= vdatos[i].STRNUMERODOCUMENTO %>
+              </td>
+              <td>
+                <%= vdatos[i].STRNOMBRE %>
+              </td>
+              <td>
+                <%= vdatos[i].STRAPELLIDO %>
+              </td>
+              <td>
+                <%= vdatos[i].BITACTIVO %>
+              </td>
+              <td>
+                <%= vdatos[i].DTMFECHACREACION %>
+              </td>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+      </div>
+      <div class="col-md-6 mt-4 card">
+        <form action="datos" method="post" class="card-body">
+          <h3 class="card-title">Add Persona</h3>
+          <div class="form-group">
+            <input type="text" name="numerodocumento" class="form-control form-control-sm" placeholder="Numero Documento">
+          </div>
+          <div class="form-group">
+            <input type="text" name="nombre" class="form-control form-control-sm" placeholder="Nombre">
+          </div>
+          <div class="form-group">
+            <input type="text" name="apellido" class="form-control form-control-sm" placeholder="Apellidos">
+          </div>
+          <div class="form-group">
+            <input type="text" name="activo" class="form-control form-control-sm" placeholder="Activo">
+          </div>
+          <input type="submit" class="btn btn-secondary btn-block">
+        </form>
+      </div>
+    </div>
+</body>
+
+</html>
